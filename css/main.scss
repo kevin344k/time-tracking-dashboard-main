@@ -1,0 +1,339 @@
+//# Front-end Style Guide
+
+//## Layout
+
+//The designs were created to the following widths:
+
+//- Mobile: 375px
+//- Desktop: 1440px
+
+//## Colors
+
+//### Primary
+
+$Blue: hsl(246, 80%, 60%);
+
+$Light_red_work: hsl(15, 100%, 70%);
+$Soft_blue_play: hsl(195, 74%, 62%);
+$Light_red_study: hsl(348, 100%, 68%);
+$Lime_green_exercise: hsl(145, 58%, 55%);
+$Violet_social: hsl(264, 64%, 52%);
+$Soft_orange_self_care: hsl(43, 84%, 65%);
+
+//### Neutral
+
+$Very_dark_blue: hsl(226, 43%, 10%);
+$Dark_blue: hsl(235, 46%, 20%);
+$Desaturated_blue: hsl(235, 45%, 61%);
+$Pale_Blue: hsl(236, 100%, 87%);
+
+//## Typography
+
+//### Body Copy
+
+$Font_size: 1.8rem;
+$font-family_Rubik: 'Rubik', sans-serif;
+//$Font_size: 18px (card titles e.g. Work, Play);
+
+//### Font
+
+//- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+//- Weights: 300, 400, 500
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin img($w, $h, $url) {
+    display: block;
+    width: $w;
+    height: $h;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+%b_r {
+    border-radius: 20px;
+}
+
+%font {
+    font-family: $font-family_Rubik;
+    font-size: $Font_size;
+    color: $Pale_Blue;
+}
+
+%ico {
+    display: inline-block;
+    //background-position: top;
+    align-self: flex-end;
+    margin-right: 20px
+}
+
+@mixin card($color_Bg, $w, $h) {
+    width: $w;
+    height: $h;
+    background-color: $color_Bg;
+
+
+}
+body{
+    background-color: $Very_dark_blue;
+}
+main {
+    width: 100vw;
+    max-width: 375px;
+    height: fit-content;
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, auto);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: $Very_dark_blue;
+    margin: auto;
+    @extend %font;
+
+    .sect--user {
+        width: 100%;
+        height: 190px;
+        background-color: $Dark_blue;
+        @extend %b_r;
+
+        .div--user-name {
+            width: 100%;
+            height: 120px;
+            background-color: $Blue;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            @extend %b_r;
+
+            span {
+                @include img(60px, 60px, "../images/image-jeremy.png");
+                border-radius: 100%;
+                border: 2px solid white;
+
+            }
+
+            div {
+                :nth-child(1) {
+                    font-size: 1.3rem;
+                }
+
+                :nth-child(2) {
+                    color: white;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .order_by {
+            width: 100%;
+            height: calc(100% - 120px);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            button {
+                background: none;
+                outline: none;
+                border: none;
+                @extend %font;
+                font-size: 1.5rem;
+                &:hover{
+                    cursor: pointer;
+                    color: white;
+                }
+
+            }
+            .menu-active{
+                color: white
+            }
+
+
+        }
+    }
+
+
+
+    .card--work-header {
+        @include card($Light_red_work, 100%, 150px);
+        @extend %b_r;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+
+        .work-ico {
+            @include img(60px, 65px, "../images/icon-work.svg");
+            @extend %ico;
+        }
+
+        .card--work-body {
+
+            @include card($Dark_blue, 100%, 120px);
+            @extend %b_r;
+            padding: 20px;
+
+            :nth-child(1) {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                color: white;
+                margin-bottom: 5px;
+
+                p {
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                }
+
+                .ico--elipsis {
+                    @include img(20px, 5px, "../images/icon-ellipsis.svg");
+                    background-repeat: repeat-x;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            :nth-child(2) {
+                @extend :nth-child(1);
+
+                .hours {
+                    font-size: 3rem;
+                    font-weight: 300;
+                }
+
+                .last--time {
+                    color: $Pale_Blue;
+                    font-weight: 300;
+                }
+
+            }
+
+            &:hover {
+                background-color: hsl(235, 42%, 26%);
+            }
+        }
+    }
+
+    .card--play-header {
+        @extend .card--work-header;
+        background-color: $Soft_blue_play;
+
+        .play-ico {
+            @include img(60px, 65px, "../images/icon-play.svg");
+            @extend %ico;
+        }
+    }
+
+    .card--study-header {
+        @extend .card--work-header;
+        background-color: $Light_red_study;
+
+        .study-ico {
+            @include img(60px, 65px, "../images/icon-study.svg");
+            @extend %ico;
+        }
+    }
+
+    .card--exercise-header {
+        @extend .card--work-header;
+        background-color: $Lime_green_exercise;
+
+        .exercise-ico {
+            @include img(60px, 65px, "../images/icon-exercise.svg");
+            @extend %ico;
+        }
+    }
+    .card--social-header {
+        @extend .card--work-header;
+        background-color: $Violet_social;
+
+        .social-ico {
+            @include img(60px, 65px, "../images/icon-social.svg");
+            @extend %ico;
+        }
+    }
+    .card--selfcare-header {
+        @extend .card--work-header;
+        background-color: $Soft_orange_self_care;
+
+        .selfcare-ico {
+            @include img(60px, 65px, "../images/icon-self-care.svg");
+            @extend %ico;
+        }
+    }
+}
+
+@media(min-width:1440px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        main{
+            max-width: 1200px;
+          height: 450px;
+            padding: 0;
+            grid-template-columns: repeat(4, auto);
+            grid-template-rows: repeat(2, auto);
+            .sect--user{
+                width: 250px;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                height: 100%;
+                .div--user-name{
+                    flex-direction: column;
+                    height: 300px;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
+                    width: 100%;
+                    :nth-child(2) {
+                        color: white;
+                        font-weight: 300;
+                        :nth-child(2) {
+                            color: white;
+                            font-weight: 300;
+                            font-size: 3.5rem;
+                          
+                        }
+                
+                    }
+                }
+                .order_by{
+                    height: calc(100% - 300px);
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding-left: 30px;
+                  
+                }
+    
+            }
+            .card--work-header{
+                height: 100%;
+                width: 250px;
+                .card--work-body{
+                    height: calc(100% - 65px);
+                    :nth-child(2){
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+    }
+    
+}
