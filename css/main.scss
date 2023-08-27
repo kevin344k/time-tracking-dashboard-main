@@ -50,7 +50,7 @@ html {
     box-sizing: border-box;
 }
 
-@mixin img($w, $h, $url) {
+@mixin img($url,$w:90px, $h:65px) {
     display: block;
     width: $w;
     height: $h;
@@ -119,7 +119,7 @@ main {
             @extend %b_r;
 
             span {
-                @include img(60px, 60px, "../images/image-jeremy.png");
+                @include img( "../images/image-jeremy.png",60px, 60px);
                 border-radius: 100%;
                 border: 2px solid white;
 
@@ -175,7 +175,7 @@ main {
         justify-content: right;
 
         .work-ico {
-            @include img(60px, 65px, "../images/icon-work.svg");
+            @include img("../images/icon-work.svg");
             @extend %ico;
         }
 
@@ -199,7 +199,7 @@ main {
                 }
 
                 .ico--elipsis {
-                    @include img(20px, 5px, "../images/icon-ellipsis.svg");
+                    @include img( "../images/icon-ellipsis.svg",20px, 5px);
                     background-repeat: repeat-x;
 
                     &:hover {
@@ -234,7 +234,7 @@ main {
         background-color: $Soft_blue_play;
 
         .play-ico {
-            @include img(60px, 65px, "../images/icon-play.svg");
+            @include img("../images/icon-play.svg");
             @extend %ico;
         }
     }
@@ -244,7 +244,7 @@ main {
         background-color: $Light_red_study;
 
         .study-ico {
-            @include img(60px, 65px, "../images/icon-study.svg");
+            @include img("../images/icon-study.svg",);
             @extend %ico;
         }
     }
@@ -254,7 +254,7 @@ main {
         background-color: $Lime_green_exercise;
 
         .exercise-ico {
-            @include img(60px, 65px, "../images/icon-exercise.svg");
+            @include img("../images/icon-exercise.svg");
             @extend %ico;
         }
     }
@@ -263,7 +263,7 @@ main {
         background-color: $Violet_social;
 
         .social-ico {
-            @include img(60px, 65px, "../images/icon-social.svg");
+            @include img("../images/icon-social.svg");
             @extend %ico;
         }
     }
@@ -272,13 +272,23 @@ main {
         background-color: $Soft_orange_self_care;
 
         .selfcare-ico {
-            @include img(60px, 65px, "../images/icon-self-care.svg");
+            @include img("../images/icon-self-care.svg");
             @extend %ico;
         }
     }
 }
 
+
+
+
+
+
+
+
+
 @media(min-width:1440px){
+   
+
     body{
         display: flex;
         justify-content: center;
@@ -286,10 +296,11 @@ main {
         height: 100vh;
         main{
             max-width: 1200px;
-          height: 450px;
+          height: 550px;
             padding: 0;
             grid-template-columns: repeat(4, auto);
             grid-template-rows: repeat(2, auto);
+            gap: 30px;
             .sect--user{
                 width: 250px;
                 grid-row-start: 1;
@@ -326,10 +337,15 @@ main {
                 height: 100%;
                 width: 250px;
                 .card--work-body{
-                    height: calc(100% - 65px);
+                    height: calc(100% - 20px);
+                  
                     :nth-child(2){
                         flex-direction: column;
                         align-items: flex-start;
+                        .hours {
+                            font-size: 5rem;
+                            font-weight: 300;
+                        }
                     }
                 }
             }

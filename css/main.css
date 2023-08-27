@@ -105,7 +105,7 @@ main .card--work-header, main .card--selfcare-header, main .card--social-header,
 }
 main .card--work-header .work-ico, main .card--selfcare-header .work-ico, main .card--social-header .work-ico, main .card--exercise-header .work-ico, main .card--study-header .work-ico, main .card--play-header .work-ico {
   display: block;
-  width: 60px;
+  width: 90px;
   height: 65px;
   background-image: url("../images/icon-work.svg");
   background-repeat: no-repeat;
@@ -159,7 +159,7 @@ main .card--play-header {
 }
 main .card--play-header .play-ico {
   display: block;
-  width: 60px;
+  width: 90px;
   height: 65px;
   background-image: url("../images/icon-play.svg");
   background-repeat: no-repeat;
@@ -171,7 +171,7 @@ main .card--study-header {
 }
 main .card--study-header .study-ico {
   display: block;
-  width: 60px;
+  width: 90px;
   height: 65px;
   background-image: url("../images/icon-study.svg");
   background-repeat: no-repeat;
@@ -183,7 +183,7 @@ main .card--exercise-header {
 }
 main .card--exercise-header .exercise-ico {
   display: block;
-  width: 60px;
+  width: 90px;
   height: 65px;
   background-image: url("../images/icon-exercise.svg");
   background-repeat: no-repeat;
@@ -195,7 +195,7 @@ main .card--social-header {
 }
 main .card--social-header .social-ico {
   display: block;
-  width: 60px;
+  width: 90px;
   height: 65px;
   background-image: url("../images/icon-social.svg");
   background-repeat: no-repeat;
@@ -207,7 +207,7 @@ main .card--selfcare-header {
 }
 main .card--selfcare-header .selfcare-ico {
   display: block;
-  width: 60px;
+  width: 90px;
   height: 65px;
   background-image: url("../images/icon-self-care.svg");
   background-repeat: no-repeat;
@@ -224,10 +224,11 @@ main .card--selfcare-header .selfcare-ico {
   }
   body main {
     max-width: 1200px;
-    height: 450px;
+    height: 550px;
     padding: 0;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, auto);
+    gap: 30px;
   }
   body main .sect--user {
     width: 250px;
@@ -262,10 +263,14 @@ main .card--selfcare-header .selfcare-ico {
     width: 250px;
   }
   body main .card--work-header .card--work-body, body main .card--play-header .card--work-body, body main .card--study-header .card--work-body, body main .card--exercise-header .card--work-body, body main .card--social-header .card--work-body, body main .card--selfcare-header .card--work-body {
-    height: calc(100% - 65px);
+    height: calc(100% - 20px);
   }
   body main .card--work-header .card--work-body :nth-child(2), body main .card--play-header .card--work-body :nth-child(2), body main .card--study-header .card--work-body :nth-child(2), body main .card--exercise-header .card--work-body :nth-child(2), body main .card--social-header .card--work-body :nth-child(2), body main .card--selfcare-header .card--work-body :nth-child(2) {
     flex-direction: column;
     align-items: flex-start;
+  }
+  body main .card--work-header .card--work-body :nth-child(2) .hours, body main .card--play-header .card--work-body :nth-child(2) .hours, body main .card--study-header .card--work-body :nth-child(2) .hours, body main .card--exercise-header .card--work-body :nth-child(2) .hours, body main .card--social-header .card--work-body :nth-child(2) .hours, body main .card--selfcare-header .card--work-body :nth-child(2) .hours {
+    font-size: 5rem;
+    font-weight: 300;
   }
 }/*# sourceMappingURL=main.css.map */
