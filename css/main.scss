@@ -338,7 +338,9 @@ main {
                 width: 250px;
                 .card--work-body{
                     height: calc(100% - 20px);
-                  
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
                     :nth-child(2){
                         flex-direction: column;
                         align-items: flex-start;

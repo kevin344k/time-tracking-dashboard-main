@@ -264,6 +264,9 @@ main .card--selfcare-header .selfcare-ico {
   }
   body main .card--work-header .card--work-body, body main .card--play-header .card--work-body, body main .card--study-header .card--work-body, body main .card--exercise-header .card--work-body, body main .card--social-header .card--work-body, body main .card--selfcare-header .card--work-body {
     height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   body main .card--work-header .card--work-body :nth-child(2), body main .card--play-header .card--work-body :nth-child(2), body main .card--study-header .card--work-body :nth-child(2), body main .card--exercise-header .card--work-body :nth-child(2), body main .card--social-header .card--work-body :nth-child(2), body main .card--selfcare-header .card--work-body :nth-child(2) {
     flex-direction: column;
